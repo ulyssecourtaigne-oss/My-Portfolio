@@ -246,8 +246,8 @@ function toggleTheme() {
 
 function applyTheme() {
   const t = settings().theme;
-  if (t === 'auto') document.documentElement.removeAttribute('data-theme');
-  else document.documentElement.setAttribute('data-theme', t);
+  if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  else document.documentElement.removeAttribute('data-theme');
 }
 
 // ---------------------------------------------------------------- dashboard

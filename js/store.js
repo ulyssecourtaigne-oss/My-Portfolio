@@ -28,7 +28,7 @@ export function defaultSettings() {
     apiKeys: {}, // { providerId: key } — stays in this browser
     refreshSeconds: 120,
     benchmark: { ticker: 'SPY', exchange: 'US', quoteCurrency: 'USD', manualPrice: null },
-    theme: 'auto',
+    theme: 'dark',
     broker: 'etoro',
     defaults: {
       currency: 'USD',
