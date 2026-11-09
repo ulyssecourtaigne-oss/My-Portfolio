@@ -40,7 +40,11 @@ function priceInfo(pos) {
   const cycle = minCycleMs(prov, openSymbols().length, settings().refreshSeconds);
   if (pos.priceMode === 'manual' || !covered) {
     if (manual) return { price: manual.price, prevClose: null, time: manual.date, status: 'manual', detail: `Manual price set ${manual.date || ''}` };
-    return { price: null, prevClose: null, time: null, status: 'none', detail: covered ? 'Manual mode, no price entered' : 'Not covered by provider — enter a manual price' };
+    const why = pos.priceMode === 'manual' ? 'Manual mode, no price entered'
+      : prov.id === 'manual' ? 'No price provider set up yet — go to Settings → Price provider, choose a provider and paste your API key'
+      : !settings().apiKeys[prov.id] ? `No API key saved for ${prov.label.split(' (')[0]} — paste it under Settings → Price provider`
+      : `${prov.label.split(' (')[0]} does not cover ${pos.exchange} — switch to EODHD or enter a manual price`;
+    return { price: null, prevClose: null, time: null, status: 'none', detail: why };
   }
   if (q && q.price != null) {
     const rates = fxRates();
