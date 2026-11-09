@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-tracker",
+  "version": "0.1.0",
+  "description": "Private, browser-only leveraged portfolio tracker (static site, no build step)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "serve": "python3 -m http.server 8080"
+  },
+  "license": "MIT"
+}

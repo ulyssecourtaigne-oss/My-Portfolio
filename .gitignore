@@ -1,0 +1,11 @@
+# Never commit personal data or keys
+*.key
+*.env
+.env*
+portfolio*.json
+backup*.json
+data/
+# tooling
+node_modules/
+.DS_Store
+/screenshots/
